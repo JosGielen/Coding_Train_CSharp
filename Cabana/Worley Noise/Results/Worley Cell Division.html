@@ -1,0 +1,35 @@
+
+<html>
+<head>
+	<title>Cell division Simulation:</title>
+</head>
+<body bgcolor="#FFFFCC">
+	<p><h1>Worley Noise Cell Division Simulation</h1></p>
+	<p>This simulation was made in C#. It is based on the examples shown in	<a href ="https://www.youtube.com/watch?v=3z9d3tqVRyc">The Coding Train</a> live stream of 04/04/2020.</p>
+	<p>During this life stream one of the viewers asked in the chat for making a cell division example.This gave me the idea to try this:</p>
+	<p>The Worley Noise seed points are now agents with simple physics engines (position, velocity, acceleration and force). <br>
+	This was for example shown in <a href = "https://www.youtube.com/watch?v=4hA7G3gup-4&list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH&index=77&t=26s">Coding Challenge #59: Steering Behaviors.</a></p>
+	<p>The seed points have 2 steering forces:<br>
+	- Try to stay at a fixed distance to the closest 3 other seed points.<br>
+	- A weak force pulling them to the middle of the image to prevent them from wandering out of the image.</p>
+	<p>Every 45 frames (about 3 seconds) a random selected seed will clone itself with a random small offset in position. (This simulates cell division)
+	<p>It is always fascinating to see the complex self-organising behaviour that can result from such simple rules.</p>
+	<img src="Worley2.gif">
+	<p><h1>Other Worley Noise Examples</h1></p>
+	<p><h2>Basic Algorithm according to Wikipedia:</h2></p>
+	<p>The basic idea is to take random points in space (2- or 3-dimensional) and then for every point in space take the distance to the nth-closest point (e.g. the second-closest point) as some kind of color information.</p>
+	<table>
+		<tr>
+			<td>When using the closest point.</td>
+			<td>When using the second closest point.</td>
+			<td>With different points for R, G, B information</td>
+		</tr>
+		<tr>
+			<td><img src="Worley Noise N=1.jpg"></td>
+			<td><img src="Worley Noise N=2.jpg"></td>
+			<td><img src="Worley Noise RGB.jpg"></td>
+		</tr>
+	</table>
+</body>
+</html>
+
