@@ -1,0 +1,12 @@
+﻿<Window x:Class="Springs.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Springs"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="700" Loaded="Window_Loaded" MouseDown="Window_MouseDown" MouseMove="Window_MouseMove" MouseUp="Window_MouseUp">
+    <Grid>
+        <Canvas x:Name="canvas1"></Canvas>
+    </Grid>
+</Window>

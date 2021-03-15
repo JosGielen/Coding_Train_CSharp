@@ -1,0 +1,34 @@
+﻿<Window x:Class="Connect4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Connect4"
+        mc:Ignorable="d"
+    Title="MainWindow" Height="400" Width="525" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions >
+            <RowDefinition Height="auto" ></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0" Name="Menu1" >
+            <MenuItem Header="File" Width="50">
+                <MenuItem Header="Save Game" Name="MenuSave" Click="MenuSave_Click"/>
+                <MenuItem Header="Load Game" Name="MenuLoad" Click="MenuLoad_Click"/>
+                <Separator/>
+                <MenuItem Header="Exit" Name="MenuExit" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Game Settings" Width="100" Name="MnuSettings" Click="MnuSettings_Click"/>
+            <MenuItem Header="Start new Game" Name="MenuStartNew" Click="MenuStartNew_Click"/>
+            <MenuItem Header="Tools" Width="50">
+                <MenuItem Header="Show Hint" Name="MenuHint" Click="MenuHint_Click"/>
+                <MenuItem Header="Analyse Game" Name="MenuAnalyse" Click="MenuAnalyse_Click"/>
+            </MenuItem>
+        </Menu>
+        <Border Grid.Row="1" Margin="5" BorderBrush="Blue" BorderThickness="3">
+            <Canvas Name="Canvas1" MouseLeftButtonUp="Canvas1_MouseLeftButtonUp"/>
+        </Border>
+        <TextBox Grid.Row="2" FontSize="18" FontWeight="Bold" Margin="5" Name="TxtStatus" HorizontalContentAlignment="Center"></TextBox>
+    </Grid>
+</Window>
