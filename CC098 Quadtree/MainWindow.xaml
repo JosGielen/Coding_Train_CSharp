@@ -1,0 +1,40 @@
+﻿<Window x:Class="Quadtree.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Quadtree"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded"  MouseUp="Window_MouseUp"  MouseMove="Window_MouseMove"  MouseDown="Window_MouseDown">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" BorderBrush="Blue" BorderThickness="2" Margin="5">
+            <Canvas Name="canvas1" SnapsToDevicePixels="True"></Canvas>
+        </Border>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Row="0" Margin="5" Header="Point Selection" BorderBrush="Blue" BorderThickness="2">
+                <StackPanel Margin="5">
+                    <RadioButton Margin="3" x:Name="RbRectangle" GroupName="Selection" IsChecked="True" Click="RbRectangle_Click">Draw Rectangle</RadioButton>
+                    <RadioButton Margin="3" x:Name="RbCircle" GroupName="Selection" Click="RbCircle_Click">Draw centerPoint</RadioButton>
+                    <StackPanel Margin="5" Orientation="Horizontal">
+                        <Label>Selected points:</Label>
+                        <TextBox x:Name="TxtSelected" Width="30" Margin="5,0,0,0" VerticalAlignment="Center">0</TextBox>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <Button Grid.Row="1" Margin="5" Width="90" Name="BtnClear" Click="BtnClear_Click">Clear Selection</Button>
+            <Button Grid.Row="2" Margin="5,25,5,5" Width="90" Name="BtnNew" Click="BtnNew_Click">New Points</Button>
+            <Button Grid.Row="4" Margin="5,5,5,25" Width="90" Name="BtnExit" Click="BtnExit_Click">EXIT</Button>
+        </Grid>
+    </Grid>
+</Window>

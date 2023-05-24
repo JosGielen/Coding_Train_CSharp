@@ -1,0 +1,31 @@
+﻿<Window x:Class="Slide_Puzzle.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Slide_Puzzle"
+        mc:Ignorable="d"
+        Title="SlidePuzzle" Height="450" Width="420" SizeToContent="WidthAndHeight" 
+        Loaded="Window_Loaded" MouseLeftButtonUp="Window_MouseLeftButtonUp" ResizeMode="CanMinimize" 
+        Icon="icons8-puzzle-64.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File" VerticalAlignment="Center">
+                <MenuItem Header="Load Picture" Name="MnuLoad" Click="MnuLoad_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Name="MnuExit" Click="MnuExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Change Grid Size" Name="MnuChangeGrid" Click="MnuChangeGrid_Click" VerticalAlignment="Center"></MenuItem>
+            <MenuItem Header="Scramble" Name="MnuScramble" Click="MnuScramble_Click" VerticalAlignment="Center"></MenuItem>
+            <Separator></Separator>
+            <Button x:Name="BtnShowOrig" PreviewMouseLeftButtonDown="BtnShowOrig_MouseLeftButtonDown" PreviewMouseLeftButtonUp="BtnShowOrig_MouseLeftButtonUp">Show Original Image</Button>
+        </Menu>
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness="3" Margin="5">
+            <Canvas Grid.Row="1" x:Name="Canvas1" Background="Beige"></Canvas>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,24 @@
+﻿<Window x:Class="Wave_Function_Collapse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wave_Function_Collapse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="430" Width="408" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" BorderBrush="Black" BorderThickness="1.5">
+            <Canvas x:Name="canvas1" SnapsToDevicePixels="True">
+                <Image x:Name="Image1"></Image>
+            </Canvas>
+        </Border>
+        <StackPanel Grid.Row="1" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Margin="5,5,20,5" Name="BtnStart" Click="BtnStart_Click">START</Button>
+            <CheckBox Margin="20,5,5,5" VerticalAlignment="Center" Name="CbRecording">Recording</CheckBox>
+        </StackPanel>
+    </Grid>
+</Window>

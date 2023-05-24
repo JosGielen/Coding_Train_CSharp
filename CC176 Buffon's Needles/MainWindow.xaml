@@ -1,0 +1,29 @@
+﻿<Window x:Class="Buffon_s_Needles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Buffon_s_Needles"
+        xmlns:JG="clr-namespace:JG_Graphs;assembly=JG_Graphs"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="800" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="5" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label VerticalAlignment="Center">Length Ratio</Label>
+            <Slider VerticalAlignment="Center" Minimum="0" Maximum="1" Value="0.5" Width="80" Margin="3" Name="SldRatio" ValueChanged="SldRatio_ValueChanged" LargeChange="0.1" SmallChange="0.05"></Slider>
+            <TextBox Width="30" VerticalContentAlignment="Center" Margin="5,3,40,3" Name="TxtRatio">0.5</TextBox>
+            <Button Width="80" FontWeight="Bold" Margin="3,3,30,3" Name="BtnStart" Click="BtnStart_Click">START</Button>
+            <Label VerticalAlignment="Center" >Number of Toothpicks</Label>
+            <TextBox Width="60" VerticalContentAlignment="Center" Margin="3" Name="TxtTotal"></TextBox>
+            <Label VerticalAlignment="Center" Margin="30,0,0,0">PI estimate</Label>
+            <TextBox Width="100" VerticalContentAlignment="Center" Margin="3" Name="TxtPiEstimate"></TextBox>
+        </StackPanel>
+        <Canvas Grid.Row="1" Margin="5" Name="canvas1" Background="Black" ClipToBounds="True"></Canvas>
+        <JG:ScatterGraph Grid.Row="2" Name="scatter1"></JG:ScatterGraph>
+    </Grid>
+</Window>
