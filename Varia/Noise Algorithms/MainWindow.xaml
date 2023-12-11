@@ -20,7 +20,7 @@ Title="MainWindow" Height="450" Width="600" Loaded="Window_Loaded"  Closing="Win
                     <RadioButton Margin="10,10,10,3" Name="Rb1D" GroupName="dim" IsChecked="True" Click="Init">1 dimensional</RadioButton>
                     <RadioButton Margin="10,3" Name="Rb2D" GroupName="dim" Click="Init">2 dimensional</RadioButton>
                     <RadioButton Margin="10,3" Name="Rb3D" GroupName="dim" Click="Init">3 dimensional</RadioButton>
-                    <RadioButton Margin="10,3,10,10" Name="Rb4D" GroupName="dim" Click="Init">4dimensional</RadioButton>
+                    <RadioButton Margin="10,3,10,10" Name="Rb4D" GroupName="dim" Click="Init">4 dimensional</RadioButton>
                 </StackPanel>
             </Border>
             <Border BorderBrush="Blue" BorderThickness="1.0" Margin="8,4">
