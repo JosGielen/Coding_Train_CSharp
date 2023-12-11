@@ -1,0 +1,49 @@
+
+<html>
+<head>
+	<title>Worley Noise Examples</title>
+</head>
+<body bgcolor="#FFFFCC">
+	<p><h1>Worley Noise Examples</h1></p>
+	<p>These examples of Worley Noise were made in C#. They are based on the examples shown in <br>
+	<a href ="https://www.youtube.com/watch?v=3z9d3tqVRyc">The Coding Train</a> live stream of 04/04/2020.</p>
+	<p><h2>Basic Algorithm according to Wikipedia:</h2></p>
+	<p>The basic idea is to take random points in space (2- or 3-dimensional) and then for every point in space<br>
+	take the distance to the nth-closest point (e.g. the second-closest point) as some kind of color information.</p>
+	<table>
+		<tr>
+			<td>When using the closest point.</td>
+			<td>When using the second closest point.</td>
+			<td>With different points for R, G, B information</td>
+		</tr>
+		<tr>
+			<td><img src="Worley Noise N=1.jpg"></td>
+			<td><img src="Worley Noise N=2.jpg"></td>
+			<td><img src="Worley Noise RGB.jpg"></td>
+		</tr>
+	</table>
+	<p><h2>Cell division Simulation: </h2></p>
+		<table>
+			<tr>
+				<td><img src="Worley2.gif"></td>
+				<td>
+					<p>During the life stream one of the viewers asked in the chat for making<br>
+					a cell division example.This gave me the idea to try this:</p>
+					<p>The Worley Noise seed points are now agents with simple physics engines<br>
+					(position, velocity, acceleration and force).
+					This was for example shown in <br>
+					<a href = "https://www.youtube.com/watch?v=4hA7G3gup-4&list=PLRqwX-V7Uu6ZiZxtDDRCi6uhfTH4FilpH&index=77&t=26s">Coding Challenge #59: Steering Behaviors.</a></p>
+					<p>The seed points have 2 steering forces:<br>
+					- Try to stay at a fixed distance to the closest 3 other seed points.<br>
+					- A weak force pulling them to the middle of the image to prevent them <br>
+					  wandering too far off.</p>
+					<p>It is always fascinating to see the complex self-organising behaviour<br>
+					that can result from such simple rules.</p>
+				</td>
+			</tr>
+
+	</table>
+
+</body>
+</html>
+

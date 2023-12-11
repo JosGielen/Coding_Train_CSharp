@@ -1,0 +1,24 @@
+﻿<Window x:Class="Kaleidoscope.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kaleidoscope"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="651" Width="608" Loaded="Window_Loaded"  MouseDown="Window_MouseDown"  MouseMove="Window_MouseMove"  MouseUp="Window_MouseUp">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height=" auto"></RowDefinition>
+            <RowDefinition ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File" Width="60" Margin="25,0,0,0">
+                <MenuItem Header="Save Image" Name="MnuSaveImage" Click="MnuSaveImage_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Name="MnuExit" Click="MnuExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Clear" Name="MnuClear" Click="MnuClear_Click"></MenuItem>
+        </Menu>
+        <Canvas Grid.Row="1" Name="canvas1" Background="Black" ClipToBounds="True"></Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,1 @@
+repeat 8 [rt 45 fd 100 rt 155 fd 100 lt 155]

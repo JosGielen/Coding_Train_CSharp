@@ -1,0 +1,29 @@
+﻿<Window x:Class="Worley_Noise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Worley_Noise"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="499" Width="458" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Save Image" Name="MnuSave" Click="MnuSave_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Name="MnuExit" Click="MnuExit_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Colors">
+                <MenuItem Header="GrayScale" IsCheckable="True" IsChecked="True" Name="MnuGray" Click="MnuGray_Click"></MenuItem>
+                <MenuItem Header="RGB Color" IsCheckable="True" IsChecked="False" Name="MnuColor" Click="MnuColor_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <Canvas Grid.Row="1" x:Name="Canvas1">
+            <Image Name="Image1"></Image>
+        </Canvas>
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Class="Logo.Legend"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Logo"
+        mc:Ignorable="d"
+        Title="Legend" Height="380" Width="450" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="0" Margin="8,5,8,0">Available Commands:</Label>
+        <Border Grid.Row="1" Margin="8" BorderBrush="Blue" BorderThickness="1" CornerRadius="5">
+            <TextBlock Grid.Row="1" Margin="3" Name="TxtLegend"></TextBlock>
+        </Border>
+        <Button Grid.Row="2" Margin="6" Width="100" Name="BtnClose" Click="BtnClose_Click">CLOSE</Button>
+    </Grid>
+</Window>
