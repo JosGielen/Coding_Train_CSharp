@@ -1,0 +1,60 @@
+
+<html>
+<head>
+	<title>Weighted Voronoi Stippling</title>
+</head>
+<body bgcolor="#FFFFCC">
+	<p><h1>Weighted Voronoi Stippling</h1></p>
+	<p><font size="+1">This program was made in C#. It uses the <a href ="https://github.com/BorisTheBrave/voronator-sharp">Voronator-Sharp C# library made by BorisTheBrave</a> to calculate the Delaunay Triangulation and the Voronoi diagram.</font></p>
+	<p><font size="+1">The following images show the different steps in the construction of a Voronoi diagram<font></p>
+	<table>
+		<tr>
+			<td><font size="+1">&nbsp;Generate some random seed points.</font></td>
+			<td><font size="+1">&nbsp; &nbsp; &nbsp;Calculate the Delaunay Triangulation.</font></td>
+			<td><font size="+1">&nbsp; &nbsp; &nbsp;Generate the Voronoi Polygons from the triangle circumcircle centers</font></td>
+		</tr>
+		<tr>
+			<td>&nbsp;<img src="SeedPoints small.jpg"></td>
+			<td>&nbsp; &nbsp; &nbsp;<img src="Delaunay Triangles small.jpg"></td>
+			<td>&nbsp; &nbsp; &nbsp;<img src="Voronoi Diagram small.jpg"></td>
+		</tr>
+	</table>
+	<p><h1>Relaxing the Voronoi Diagram</h1></p>
+	<p><font size="+1">The Voronoi diagram can be relaxed by moving the Seed Points towards the centers of each polygon.</font></p>
+	<table>
+		<tr>
+			<td><font size="+1">&nbsp;The Voronoi diagram before relaxing.</font></td>
+			<td><font size="+1">&nbsp; &nbsp; &nbsp;The Voronoi diagram after relaxing.</font></td>
+			<td><font size="+1">&nbsp; &nbsp; &nbsp;Coloring the Relaxed Voronoi Polygons from an image.</font></td>
+		</tr>
+		<tr>
+			<td>&nbsp;<img src="Voronoi before relaxing small.jpg"></td>
+			<td>&nbsp; &nbsp; &nbsp;<img src="Voronoi after relaxing small.jpg"></td>
+			<td>&nbsp; &nbsp; &nbsp;<img src="Relaxed Colored Voronoi small.jpg"></td>
+		</tr>
+	</table>
+<p><h1>Using the Seed Points for Stippling an Image</h1></p>
+	<table>
+		<tr>
+			<td><font size="+1">&nbsp;Stippling without relaxing the seed points.</font></td>
+			<td><font size="+1">&nbsp; &nbsp; &nbsp;Stippling after relaxing the seed points.</font></td>
+		</tr>
+		<tr>
+			<td>&nbsp;<img src="Stippling before relaxing small.jpg"></td>
+			<td>&nbsp; &nbsp; &nbsp;<img src="Stippling after relaxing small.jpg"></td>
+		</tr>
+	</table>
+<p><h1>Different ways for Stippling an Image</h1></p>
+	<table>
+		<tr>
+			<td><font size="+1">&nbsp;Stippling with the Voronoi Polygons.</font></td>
+			<td><font size="+1">&nbsp; &nbsp; &nbsp;Stippling with the circumccircle centers.</font></td>
+		</tr>
+		<tr>
+			<td>&nbsp;<img src="Stippling Voronoi after relaxing small.jpg"></td>
+			<td>&nbsp; &nbsp; &nbsp;<img src="Stippling Circumcenters after relaxing small.jpg"></td>
+		</tr>
+	</table>
+</body>
+</html>
+
