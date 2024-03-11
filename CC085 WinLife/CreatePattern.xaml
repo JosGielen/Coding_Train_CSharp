@@ -1,0 +1,36 @@
+﻿<Window x:Class="WinLife.CreatePattern"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinLife"
+        mc:Ignorable="d"
+    Title="CreatePattern" Height="339" Width="248" MinHeight="0" MinWidth="0"
+        MouseLeftButtonUp="CreatePattern_MouseLeftButtonUp" MouseRightButtonUp="CreatePattern_MouseRightButtonUp"
+        SizeChanged="CreatePattern_SizeChanged">
+    <Grid>
+        <Menu Height="25" VerticalAlignment="Top">
+            <MenuItem Header="File" Name="MenuFile" Width="50">
+                <MenuItem Header="Open Pattern" Name="MenuOpen" Click="MenuOpen_Click"/>
+                <MenuItem Header="Save Pattern" Name="MenuSave" Click="MenuSave_Click"/>
+                <MenuItem Header="Save Pattern As" Name="MenuSaveAs" Click="MenuSaveAs_Click"/>
+                <Separator/>
+                <MenuItem Header="Exit" Name="MenuExit" Click="MenuExit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Edit" Name="MenuEdit" Width="50">
+                <MenuItem Header="10x10 Pattern" Name="Menu10x10" IsCheckable="True" Click="Menu10x10_Click"/>
+                <MenuItem Header="20x20 Pattern" Name="Menu20x20" IsCheckable="True" IsChecked="True" Click="Menu20x20_Click"/>
+                <MenuItem Header="40x40 Pattern" Name="Menu40x40" IsCheckable="True" Click="Menu40x40_Click"/>
+                <MenuItem Header="60x60 Pattern" Name="Menu60x60" IsCheckable="True" Click="Menu60x60_Click"/>
+                <Separator />
+                <MenuItem Header="Flip Vertical" Name="MenuVert" Click="MenuVert_Click"/>
+                <MenuItem Header="Flip Horizontal" Name="MenuHori" Click="MenuHori_Click"/>
+                <Separator />
+                <MenuItem Header="Clear" Name="MenuClear" Click="MenuClear_Click"/>
+                <MenuItem Header="Reset" Name="MenuReset" Click="MenuReset_Click"/>
+            </MenuItem>
+        </Menu>
+        <Canvas Margin="2,25,2,45" Name="Canvas1"/>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,0,12,12" Name="BtnStep" VerticalAlignment="Bottom" Width="75" Click="BtnStep_Click">STEP</Button>
+    </Grid>
+</Window>
