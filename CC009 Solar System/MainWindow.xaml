@@ -1,0 +1,59 @@
+﻿<Window x:Class="Solar_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Solar_System"
+        xmlns:JG="clr-namespace:JG_GL;assembly=JG_GL"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="900" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <JG:GLScene Grid.Row="0" x:Name="scene1"></JG:GLScene>
+        <StackPanel Grid.Row="1" Margin="10" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Label>Speed:</Label>
+            <Slider Width="120" Minimum="0" Maximum="1000" TickFrequency="5" TickPlacement="Both" Foreground="Black" 
+                    Name="SldSpeed" ValueChanged="SldSpeed_ValueChanged" SmallChange="1" LargeChange="10" IsSnapToTickEnabled="True" Value="250"/>
+            <TextBox Width="40" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Text="{Binding ElementName=SldSpeed,Path=Value}" Margin="10,0,0,0"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="10" Orientation="Vertical">
+            <Label FontSize="14" FontWeight="Bold" HorizontalAlignment="Center">Camera Control</Label>
+            <GroupBox Header="Show Planets" FontWeight="Bold">
+                <StackPanel Margin="10" Orientation="Vertical">
+                    <Button Margin="5" Width="80" Tag="BtnSun" Click="CameraControl_Click">Sun</Button>
+                    <Button Margin="5" Width="80" Tag="BtnMercury" Click="CameraControl_Click">Mercury</Button>
+                    <Button Margin="5" Width="80" Tag="BtnVenus" Click="CameraControl_Click" >Venus</Button>
+                    <Button Margin="5" Width="80" Tag="BtnEarth" Click="CameraControl_Click">Earth</Button>
+                    <Button Margin="5" Width="80" Tag="BtnMars" Click="CameraControl_Click">Mars</Button>
+                    <Button Margin="5" Width="80" Tag="BtnJupiter" Click="CameraControl_Click">Jupiter</Button>
+                    <Button Margin="5" Width="80" Tag="BtnSaturn" Click="CameraControl_Click">Saturn</Button>
+                    <Button Margin="5" Width="80" Tag="BtnUranus" Click="CameraControl_Click">Uranus</Button>
+                    <Button Margin="5" Width="80" Tag="BtnNeptune" Click="CameraControl_Click">Neptune</Button>
+                    <Button Margin="5" Width="80" Tag="BtnPluto" Click="CameraControl_Click">Pluto</Button>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Zoom to Planet Orbits" FontWeight="Bold">
+                <StackPanel Margin="10" Orientation="Vertical">
+
+
+                    <Button Margin="5" Width="80" Tag="BtnMercuryOrbit" Click="CameraControl_Click">Mercury Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnVenusOrbit" Click="CameraControl_Click">Venus Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnEarthOrbit" Click="CameraControl_Click">Earth Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnMarsOrbit" Click="CameraControl_Click">Mars Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnJupiterOrbit" Click="CameraControl_Click">Jupiter Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnSaturnOrbit" Click="CameraControl_Click">Saturn Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnUranusOrbit" Click="CameraControl_Click">Uranus Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnNeptuneOrbit" Click="CameraControl_Click">Neptune Orbit</Button>
+                    <Button Margin="5" Width="80" Tag="BtnPlutoOrbit" Click="CameraControl_Click">Pluto Orbit</Button>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
