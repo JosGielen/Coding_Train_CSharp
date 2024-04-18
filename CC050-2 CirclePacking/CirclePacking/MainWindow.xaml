@@ -1,0 +1,34 @@
+﻿<Window x:Class="CirclePacking.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CirclePacking"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="631" Width="882" Loaded="Window_Loaded" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Row="0" Grid.Column="0" BorderBrush="Blue" BorderThickness="2.0" Margin="20" Width="399" Height="533">
+            <Canvas Name="canvas1"  >
+                <Canvas.Background>
+                    <ImageBrush ImageSource="/dog.jpg" />
+                </Canvas.Background>
+            </Canvas>
+        </Border>
+        <Border Grid.Row="0" Grid.Column="1" BorderBrush="Blue" BorderThickness="2.0" Margin="20" Width="399" Height="533">
+            <Canvas Name="canvas2"></Canvas>
+        </Border>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+            <CheckBox Margin="50,10" Name="CbColor" Click="CbColor_Click" >Use Color</CheckBox>
+            <Label Margin="5">Fill Percentage =</Label>
+            <TextBox Margin="5" Width="50" Name="TxtFill" VerticalContentAlignment="Center" HorizontalContentAlignment="Center">0</TextBox>
+        </StackPanel>
+    </Grid>
+</Window>
