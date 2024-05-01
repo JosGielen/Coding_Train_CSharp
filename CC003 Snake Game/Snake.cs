@@ -40,7 +40,7 @@ namespace Snake_Game
                 Height = H,
                 Stroke = Brushes.Brown,
                 StrokeThickness = 1.0,
-                Fill = Brushes.Beige
+                Fill = Brushes.Brown
             };
             R.SetValue(Canvas.LeftProperty, BodyLocation[0].X);
             R.SetValue(Canvas.TopProperty, BodyLocation[0].Y);
@@ -102,10 +102,18 @@ namespace Snake_Game
         {
             bool result = true;
             //Check wall collision
-
-
+            double XPos = BodyLocation[0].X;
+            double YPos = BodyLocation[0].Y;
+            if (XPos < 0 || XPos > Field.ActualWidth || YPos < 0 || YPos > Field.ActualHeight) result = false;
             //Check self collision
-
+            for(int i = 1; i < BodyLocation.Count; i++)
+            {
+                if ((BodyLocation[i] - BodyLocation[0]).Length < (W + H) / 4)
+                {
+                    result = false;
+                    break;
+                }
+            }
             return result;
         }
 
