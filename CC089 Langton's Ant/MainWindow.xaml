@@ -1,0 +1,21 @@
+﻿<Window x:Class="Langton_Ant.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Langton_Ant"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="631" Width="608" Loaded="Window_Loaded" SizeChanged="Window_SizeChanged" Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Border Grid.Row="0" Margin="5" BorderBrush="Black" BorderThickness="2">
+            <Canvas Name="Canvas1" Margin="3">
+                <Image Name="Image1"></Image>
+            </Canvas>
+        </Border>
+        <Button Grid.Row="1" Margin="10" Width="80" FontSize="14" FontWeight="Bold" Name="BtnStart" Click="BtnStart_Click">START</Button>
+    </Grid>
+</Window>
