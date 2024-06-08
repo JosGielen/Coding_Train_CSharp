@@ -1,0 +1,35 @@
+﻿<Window x:Class="Book_of_PI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Book_of_PI"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="830" Width="1096" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Margin="5" BorderBrush="Blue" BorderThickness="2" >
+            <Canvas Name="canvas1"></Canvas>
+        </Border>
+        <Border Grid.Column="1" Margin="5" BorderBrush="Blue" BorderThickness="2" >
+            <StackPanel Grid.Column="1" Margin="10">
+                <Label>SHOW:</Label>
+                <CheckBox x:Name="CBAll" Margin="3" Click="CBAll_Click"  IsChecked="False">All</CheckBox>
+                <CheckBox x:Name="CB0" Margin="3" Click="CharSelect" IsChecked="True">0</CheckBox>
+                <CheckBox x:Name="CB1" Margin="3" Click="CharSelect" IsChecked="True">1</CheckBox>
+                <CheckBox x:Name="CB2" Margin="3" Click="CharSelect" IsChecked="True">2</CheckBox>
+                <CheckBox x:Name="CB3" Margin="3" Click="CharSelect" IsChecked="True">3</CheckBox>
+                <CheckBox x:Name="CB4" Margin="3" Click="CharSelect" IsChecked="True">4</CheckBox>
+                <CheckBox x:Name="CB5" Margin="3" Click="CharSelect" IsChecked="True">5</CheckBox>
+                <CheckBox x:Name="CB6" Margin="3" Click="CharSelect" IsChecked="True">6</CheckBox>
+                <CheckBox x:Name="CB7" Margin="3" Click="CharSelect" IsChecked="True">7</CheckBox>
+                <CheckBox x:Name="CB8" Margin="3" Click="CharSelect" IsChecked="True">8</CheckBox>
+                <CheckBox x:Name="CB9" Margin="3" Click="CharSelect" IsChecked="True">9</CheckBox>
+                <CheckBox x:Name="CBNone" Margin="3" Click="CBNone_Click"  IsChecked="False">None</CheckBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
