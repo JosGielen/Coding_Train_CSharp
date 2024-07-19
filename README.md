@@ -1,7 +1,7 @@
 # Coding_Train_CSharp
-Coding Train challenges implemented in C#.net. All programs were made as Windows Desktop WPF Applications in Visual Studio 2019 (Community Edition) with .NET version 4.7.2
+Coding Train challenges implemented in C#.net. All programs were made as Windows Desktop WPF Applications in Visual Studio 2019-2022 (Community Edition) with .NET version 4.7.2 or 8.0
 
-.NET runtime 4.7.2 or higher is needed to run the applications.
+.NET runtime 4.7.2 or 8.0 or higher is needed to run the applications.
 
 To use the code in Visual Studio :
 Create a new default C# Windows Desktop WPF Application with an appropriate name. (This should generate the Mainwindow files)
