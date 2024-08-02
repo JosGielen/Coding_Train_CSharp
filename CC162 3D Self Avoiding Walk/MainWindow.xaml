@@ -1,0 +1,13 @@
+﻿<Window x:Class="_3D_Self_Avoiding_Walk.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:JG="clr-namespace:JG_GL;assembly=JG_GL"
+        xmlns:local="clr-namespace:_3D_Self_Avoiding_Walk"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="750" Width="800" Loaded="Window_Loaded"  Closing="Window_Closing">
+    <Grid>
+        <JG:GLScene x:Name="scene1"></JG:GLScene>
+    </Grid>
+</Window>
