@@ -1,0 +1,41 @@
+﻿<Window x:Class="Wave_Function_Collapse.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wave_Function_Collapse"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="475" Width="545" Loaded="Window_Loaded">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Menu Grid.Row="0">
+            <MenuItem Header="File">
+                <MenuItem Header="Open Source Image" Name="MnuOpen" Click="MnuOpen_Click"></MenuItem>
+                <MenuItem Header="Save Result Image" Name="MnuSave" Click="MnuSave_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Name="MenuExit" Click="MenuExit_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <Label HorizontalAlignment="Center" Margin="15">Source Image</Label>
+            <Image x:Name="SourceImage" Width="50" Height="50"></Image>
+        </StackPanel>
+        <Border Grid.Row="1" Grid.Column="1" BorderBrush="Black" BorderThickness="1.5" Margin="5">
+            <Canvas x:Name="canvas1" SnapsToDevicePixels="True"></Canvas>
+        </Border>
+        <Border Grid.Row="2" Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1.5" Margin="5">
+            <StackPanel Margin="3"  Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Margin="5,5,40,5" FontSize="14" Name="BtnStart" Click="BtnStart_Click">START</Button>
+                <CheckBox Margin="40,5,5,5" VerticalAlignment="Center" Name="CbRecording">Record Animated Gif</CheckBox>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
