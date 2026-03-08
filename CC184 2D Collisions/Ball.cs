@@ -55,6 +55,11 @@ namespace _2DCollisions
         public double Speed
         {
             get { return my_Velocity.Length; }
+            set 
+            { 
+                my_Velocity.Normalize(); 
+                my_Velocity *= value;
+            }
         }
 
         public Brush Color
@@ -129,6 +134,10 @@ namespace _2DCollisions
             my_Shape.SetValue(Canvas.TopProperty, my_Pos.Y - my_Radius);
         }
 
+        /// <summary>
+        /// Elastic collision with conservation of Momentum and Kinetic Energy
+        /// </summary>
+        /// <param name="other"></param>
         public void Collide(Ball other)
         {
             if ((my_Pos - other.Pos).Length < (my_Radius + other.Radius))

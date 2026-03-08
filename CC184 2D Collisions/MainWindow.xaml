@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:_2DCollisions"
         xmlns:JG="clr-namespace:JG_Graphs;assembly=JG_Graphs"
         mc:Ignorable="d"
-        Title="2D Collisions" Height="950" Width="1200" Loaded="Window_Loaded"  Closing="Window_Closing">
+        Title="2D Collisions" Height="1250" Width="1200" Loaded="Window_Loaded"  Closing="Window_Closing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
@@ -32,6 +32,6 @@
             <CheckBox Grid.Row="0" Grid.Column="2" Margin="5" FontSize="14" FontWeight="Bold" Name="CbBounce" HorizontalAlignment="Left" VerticalContentAlignment="Center" IsChecked="True">Bounce at walls</CheckBox>
             <CheckBox Grid.Row="0" Grid.Column="3" Margin="5" FontSize="14" FontWeight="Bold" Name="CbQTree" HorizontalAlignment="Left" VerticalContentAlignment="Center" IsChecked="True">Use a QuadTree</CheckBox>
             <Button Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="5" Width="80" Height="25" FontSize="14" FontWeight="Bold" Name="BtnStart" Click="BtnStart_Click">START</Button>
-            </Grid>
+        </Grid>
     </Grid>
 </Window>
