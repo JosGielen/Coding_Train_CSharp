@@ -2,7 +2,7 @@
 Coding Train challenges implemented in C#.net. 
 See the Coding Train Challenges website : https://thecodingtrain.com/challenges
 
-All my versions of these challenges were made as Windows Desktop Applications using the .Net C# language with WPF and Visual Studio 2019-2022 (Community Edition) with .NET version 4.7.2 or 8.0
+All my versions of these challenges were made as Windows Desktop Applications using the .Net C# language with WPF and Visual Studio 2019-2022 (Community Edition) with .NET version 4.7.2 till 10.0
 
 To use the code in Visual Studio :
 Create a new default C# Windows Desktop WPF Application with an appropriate name. (This should generate the project folder with a folder that contains the Mainwindow files)
