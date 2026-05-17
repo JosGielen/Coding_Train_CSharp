@@ -6,13 +6,14 @@
         xmlns:local="clr-namespace:RubiksCube"
         xmlns:JG ="clr-namespace:JG_GL;assembly=JG_GL"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1200"  
-        KeyUp="Window_KeyUp" Loaded="Window_Loaded" Closing="Window_Closing">
+        Title="MainWindow" Height="650" Width="1200"  
+        KeyUp="Window_KeyUp" PreviewKeyUp="Window_PreviewKeyUp" Loaded="Window_Loaded" Closing="Window_Closing" SizeChanged="Window_SizeChanged">
     <Grid Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -23,90 +24,96 @@
         </Grid.ColumnDefinitions>
         <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4">
             <MenuItem Header="File">
-
+                <MenuItem Header="Load Cube" Name="mnuLoad" Click="mnuLoad_Click"></MenuItem>
+                <MenuItem Header="Save Cube" Name="mnuSave" Click="mnuSave_Click"></MenuItem>
+                <MenuItem Header="Save Cube As" Name="mnuSaveAs" Click="mnuSaveAs_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Exit" Name="mnuExit" Click="mnuExit_Click"></MenuItem>
             </MenuItem>
             <MenuItem Header="Edit">
-
+                <MenuItem Header="Scramble Cube" Name="mnuScramble" Click="mnuScramble_Click"></MenuItem>
+                <Separator></Separator>
+                <MenuItem Header="Reset Cube" Name="mnuReset" Click="mnuReset_Click"></MenuItem>
             </MenuItem>
         </Menu>
         <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="BtnBackCW" Click="BtnBackCW_Click" Width="65" Margin="5">
+            <Button Name="BtnBackCW" Click="BtnBackCW_Click" Width="65" Margin="5" Background="Blue">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="FRONTCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">BACK CW</Label>
+                    <Image Source="Images/FRONTCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">BACK CW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnUpCW" Click="BtnUpCW_Click" Width="65" Margin="20,5,5,5">
+            <Button Name="BtnUpCW" Click="BtnUpCW_Click" Width="65" Margin="20,5,5,5" Background="White">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="UPCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">UP CW</Label>
+                    <Image Source="Images/UPCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">UP CW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnUpCCW" Click="BtnUpCCW_Click" Width="65" Margin="5,5,20,5">
+            <Button Name="BtnUpCCW" Click="BtnUpCCW_Click" Width="65" Margin="5,5,20,5" Background="White">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="UPCCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">UP CCW</Label>
+                    <Image Source="Images/UPCCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">UP CCW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnBackCCW" Click="BtnBackCCW_Click" Width="65" Margin="5">
+            <Button Name="BtnBackCCW" Click="BtnBackCCW_Click" Width="65" Margin="5" Background="Blue">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="FRONTCCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">BACK CCW</Label>
+                    <Image Source="Images/FRONTCCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">BACK CCW</Label>
                 </StackPanel>
             </Button>
         </StackPanel>
         <StackPanel Grid.Row="2" Grid.Column="0" Orientation="Vertical" VerticalAlignment="center">
-            <Button Name="BtnLeftCCW" Click="BtnLeftCCW_Click" Width="65" Margin="5,5,5,10">
+            <Button Name="BtnLeftCCW" Click="BtnLeftCCW_Click" Width="65" Margin="5,5,5,10" Background="#FFFF9600">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="LEFTCCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">LEFT CCW</Label>
+                    <Image Source="Images/LEFTCCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">LEFT CCW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnLeftCW" Click="BtnLeftCW_Click" Width="65" Margin="5,10,5,5">
+            <Button Name="BtnLeftCW" Click="BtnLeftCW_Click" Width="65" Margin="5,10,5,5" Background="#FFFF9600">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="LEFTCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">LEFT CW</Label>
+                    <Image Source="Images/LEFTCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">LEFT CW</Label>
                 </StackPanel>
             </Button>
         </StackPanel>
         <JG:GLScene Grid.Row="2" Grid.Column="1" Name="Scene1"/>
         <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical" VerticalAlignment="Center">
-            <Button Name="BtnRightCW" Click="BtnRightCW_Click" Width="65" Margin="5,5,5,10">
+            <Button Name="BtnRightCW" Click="BtnRightCW_Click" Width="65" Margin="5,5,5,10" Background="Red">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="RIGHTCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">RIGHT CW</Label>
+                    <Image Source="Images/RIGHTCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">RIGHT CW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnRightCCW" Click="BtnRightCCW_Click" Width="65" Margin="5,10,5,5">
+            <Button Name="BtnRightCCW" Click="BtnRightCCW_Click" Width="65" Margin="5,10,5,5" Background="Red">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="RIGHTCCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">RIGHT CCW</Label>
+                    <Image Source="Images/RIGHTCCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">RIGHT CCW</Label>
                 </StackPanel>
             </Button>
         </StackPanel>
         <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button Name="BtnFrontCW" Click="BtnFrontCW_Click" Width="65" Margin="5">
+            <Button Name="BtnFrontCW" Click="BtnFrontCW_Click" Width="65" Margin="5" Background="Lime">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="FRONTCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" >FRONT CW</Label>
+                    <Image Source="Images/FRONTCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">FRONT CW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnDownCW" Click="BtnDownCW_Click" Width="65" Margin="20,5,5,5">
+            <Button Name="BtnDownCW" Click="BtnDownCW_Click" Width="65" Margin="20,5,5,5" Background="Yellow">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="DOWNCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">DOWN CW</Label>
+                    <Image Source="Images/DOWNCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">DOWN CW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnDownCCW" Click="BtnDownCCW_Click" Width="65" Margin="5,5,20,5">
+            <Button Name="BtnDownCCW" Click="BtnDownCCW_Click" Width="65" Margin="5,5,20,5" Background="Yellow">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="DOWNCCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">DOWN CCW</Label>
+                    <Image Source="Images/DOWNCCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">DOWN CCW</Label>
                 </StackPanel>
             </Button>
-            <Button Name="BtnFrontCCW" Click="BtnFrontCCW_Click" Width="65" Margin="5">
+            <Button Name="BtnFrontCCW" Click="BtnFrontCCW_Click" Width="65" Margin="5" Background="Lime">
                 <StackPanel Orientation="Vertical">
-                    <Image Source="FRONTCCW.JPG" Width="35" Stretch="Uniform"/>
-                    <Label Padding="0" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold">FRONT CCW</Label>
+                    <Image Source="Images/FRONTCCW.JPG" Width="35" Stretch="Uniform"/>
+                    <Label Padding="0" Width="65" HorizontalContentAlignment="Center" FontSize="10" FontWeight="Bold" Background="White">FRONT CCW</Label>
                 </StackPanel>
             </Button>
         </StackPanel>
@@ -114,5 +121,15 @@
         <Border Grid.Row="2" Grid.Column="3" Margin="5,0" BorderBrush="Blue" BorderThickness="2">
             <Canvas Grid.Row ="0" Name="canvas1" Background="Beige" SnapsToDevicePixels="True" PreviewMouseDown="Canvas1_PreviewMouseDown"></Canvas>
         </Border>
+        <StackPanel Grid.Row="3" Grid.Column="3" Orientation="Horizontal">
+            <Button Width="60" Height="28" Margin="5" FontSize="14" FontWeight="Bold" Name="btnSolve" Click="btnSolve_Click">SOLVE</Button>
+            <Label FontSize="14" VerticalContentAlignment="Center" Margin="5">Solution:</Label>
+            <TextBox Width="400" Height="30" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Name="txtSolution" IsReadOnly="True"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="4" Grid.Column="3" Orientation="Horizontal">
+            <Label Height="30" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Margin="10,3,10,10">Current Solution Move:</Label>
+            <TextBox Width="50" Height="30" VerticalContentAlignment="Center" FontSize="14" FontWeight="Bold" Margin="10,3,10,10" Name="txtCurrent"></TextBox>
+            <Button Width="120" Height="30" Margin="10,3,10,10" FontSize="14" FontWeight="Bold" Name="btnUnscramble" Click="btnUnscramble_Click">Perform Move</Button>
+        </StackPanel>
     </Grid>
 </Window>

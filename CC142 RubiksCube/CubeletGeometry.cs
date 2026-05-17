@@ -1,19 +1,11 @@
-﻿using GlmNet;
-using JG_GL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Intrinsics.Arm;
-using System.Text;
-using System.Threading.Tasks;
+﻿using JG_GL;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Media3D;
 
 namespace RubiksCube
 {
-
-    internal class Cubelet : GLGeometry
+    internal class CubeletGeometry : GLGeometry
     {
         private double my_Size;
         private Vector3D my_Pos;
@@ -24,7 +16,7 @@ namespace RubiksCube
         private Color hiddenColor;
         private readonly double Centerdistance;
 
-        public Cubelet(Vector3D position, double size, double spacing, int[] cubeletfacenumbers)
+        public CubeletGeometry(Vector3D position, double size, double spacing, int[] cubeletfacenumbers)
         {
             my_Pos = position;
             my_Size = size;
@@ -306,9 +298,6 @@ namespace RubiksCube
         }
 
         #endregion
-
-
-
 
     }
 }

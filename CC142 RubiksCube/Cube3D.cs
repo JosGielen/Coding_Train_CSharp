@@ -1,9 +1,4 @@
 ﻿using JG_GL;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Media.Media3D;
 
 namespace RubiksCube
@@ -12,22 +7,22 @@ namespace RubiksCube
     {
         private GLScene my_Scene;
         private CubeMap my_Map;
-        private List<Cubelet> my_Cubelets;
+        private List<CubeletGeometry> my_Cubelets;
         private readonly double CubeletSize;
         private readonly double CubeletSpacing = 1.5;
         private QuarterRotation my_Rotation;
         private double my_RotationSpeed;
         private List<QuarterRotation> my_Scrable;
-        private List<Cubelet> SelectedCubelets;
+        private List<CubeletGeometry> SelectedCubelets;
         private double my_TotalAngle;
 
         public Cube3D(GLScene scene, CubeMap map)
         {
-            Cubelet cubie;
+            CubeletGeometry cubie;
             Vector3D pos;
             my_Scene = scene;
             my_Map = map;
-            my_Cubelets = new List<Cubelet>();
+            my_Cubelets = new List<CubeletGeometry>();
             my_Scrable = new List<QuarterRotation>();
             my_RotationSpeed = 0.1;
             my_TotalAngle = 0.0;
@@ -36,11 +31,11 @@ namespace RubiksCube
             //The FaceNumbers link the CubeletFaces to the X (or -X), Y (or -Y) and Z (or -Z) face of each Cubelet
             //Each Cubelet has 1, 2 or 3 CubeletFaces (-1 = hidden face);
             int[] FaceNumbers = {
-                2, 47, 35, 5, 46, -1, 8, 45, 11, 1, -1, 34, 4, -1, -1, 7, -1,
-                10, 0, 36, 33, 3, 37, -1, 6, 38, 9, -1, 50, 32, -1, 49, -1,
-                -1, 48, 14, -1, -1, 31, -1, -1, -1, -1, -1, 13, -1, 39, 30, -1, 40,
-                -1, -1, 41, 12, 26, 53, 29, 23, 52, -1, 20, 51, 17, 25, -1,
-                28, 22, -1, -1, 19, -1, 16, 24, 42, 27, 21, 43, -1, 18, 44, 15};
+                42, 33, 53, 43, 30, -1, 44, 27, 24, 39, -1, 50, 40, -1, -1, 41, -1,
+                21, 36, 0, 47, 37, 3, -1, 38, 6, 18, -1, 34, 52, -1, 31, -1,
+                -1, 28, 25, -1, -1, 49, -1, -1, -1, -1, -1, 22, -1, 1, 46, -1, 4,
+                -1, -1, 7, 19, 17, 35, 51, 16, 32, -1, 15, 29, 26, 14, -1,
+                48, 13, -1, -1, 12, -1, 23, 11, 2, 45, 10, 5, -1, 9, 8, 20};
             int counter = 0;
             //Make the Cubelets
             for (int X = -1; X <= 1; X++)
@@ -53,7 +48,7 @@ namespace RubiksCube
                         CubeletFaceNumbers[0] = FaceNumbers[3 * counter];
                         CubeletFaceNumbers[1] = FaceNumbers[3 * counter + 1];
                         CubeletFaceNumbers[2] = FaceNumbers[3 * counter + 2];
-                        cubie = new Cubelet(pos, CubeletSize, CubeletSpacing, CubeletFaceNumbers);
+                        cubie = new CubeletGeometry(pos, CubeletSize, CubeletSpacing, CubeletFaceNumbers);
                         cubie.SetColors(map.CubeletFaces);
                         my_Scene.AddGeometry(cubie);
                         my_Cubelets.Add(cubie);
@@ -77,7 +72,7 @@ namespace RubiksCube
             set { my_Rotation = value; }
         }
 
-        public List<Cubelet> Cubelets
+        public List<CubeletGeometry> Cubelets
         {
             get { return my_Cubelets; }
         }
@@ -139,7 +134,7 @@ namespace RubiksCube
         private void RotateUp(bool ClockWise)
         {
             double angle;
-            SelectedCubelets = new List<Cubelet>();
+            SelectedCubelets = new List<CubeletGeometry>();
             //Select the cubelets at the top
             for (int I = 0; I < my_Cubelets.Count(); I++)
             {
@@ -190,7 +185,7 @@ namespace RubiksCube
         private void RotateDown(bool ClockWise)
         {
             double angle;
-            SelectedCubelets = new List<Cubelet>();
+            SelectedCubelets = new List<CubeletGeometry>();
             //Select the cubelets at the bottom
             for (int I = 0; I < my_Cubelets.Count(); I++)
             {
@@ -242,7 +237,7 @@ namespace RubiksCube
         private void RotateLeft(bool ClockWise)
         {
             double angle;
-            SelectedCubelets = new List<Cubelet>();
+            SelectedCubelets = new List<CubeletGeometry>();
             //Select the cubelets at the left side
             for (int I = 0; I < my_Cubelets.Count(); I++)
             {
@@ -294,7 +289,7 @@ namespace RubiksCube
         private void RotateRight(bool ClockWise)
         {
             double angle;
-            SelectedCubelets = new List<Cubelet>();
+            SelectedCubelets = new List<CubeletGeometry>();
             //Select the cubelets at the left side
             for (int I = 0; I < my_Cubelets.Count(); I++)
             {
@@ -346,7 +341,7 @@ namespace RubiksCube
         private void RotateFront(bool ClockWise)
         {
             double angle;
-            SelectedCubelets = new List<Cubelet>();
+            SelectedCubelets = new List<CubeletGeometry>();
             //Select the cubelets at the left side
             for (int I = 0; I < my_Cubelets.Count; I++)
             {
@@ -399,7 +394,7 @@ namespace RubiksCube
         private void RotateBack(bool ClockWise)
         {
             double angle;
-            SelectedCubelets = new List<Cubelet>();
+            SelectedCubelets = new List<CubeletGeometry>();
             //Select the cubelets at the left side
             for (int I = 0; I < my_Cubelets.Count(); I++)
             {
